@@ -22,6 +22,7 @@ class MainVC: UIViewController {
         mainView.snp.makeConstraints { make in
             make.edges.equalTo(view).inset(UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10))
         }
+
     }
 
 }
