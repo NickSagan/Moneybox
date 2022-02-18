@@ -76,7 +76,6 @@ class GradientHorizontalProgressBar: UIView {
     }
 
     @objc func deleteGradient() {
-        print("Delete layer")
         gradientColor = color
     }
 }
