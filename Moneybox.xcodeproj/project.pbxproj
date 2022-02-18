@@ -9,13 +9,22 @@
 /* Begin PBXBuildFile section */
 		91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */; };
 		91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */; };
-		91E1733E27BFBC5C00E03BD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* ViewController.swift */; };
-		91E1734127BFBC5C00E03BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E1733F27BFBC5C00E03BD4 /* Main.storyboard */; };
+		91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* MainVC.swift */; };
 		91E1734327BFBC6300E03BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E1734227BFBC6300E03BD4 /* Assets.xcassets */; };
 		91E1734627BFBC6300E03BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */; };
 		91E1735127BFBC6400E03BD4 /* MoneyboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1735027BFBC6400E03BD4 /* MoneyboxTests.swift */; };
 		91E1735B27BFBC6400E03BD4 /* MoneyboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1735A27BFBC6400E03BD4 /* MoneyboxUITests.swift */; };
 		91E1735D27BFBC6400E03BD4 /* MoneyboxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1735C27BFBC6400E03BD4 /* MoneyboxUITestsLaunchTests.swift */; };
+		91E1737427BFCC2E00E03BD4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 91E1737327BFCC2E00E03BD4 /* SnapKit */; };
+		91E1737627BFCD4200E03BD4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737527BFCD4200E03BD4 /* MainView.swift */; };
+		91E1738127BFD88900E03BD4 /* ActivityStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737927BFD88900E03BD4 /* ActivityStyleKit.swift */; };
+		91E1738227BFD88900E03BD4 /* ProgressStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737A27BFD88900E03BD4 /* ProgressStyleKit.swift */; };
+		91E1738327BFD88900E03BD4 /* OrbitActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737B27BFD88900E03BD4 /* OrbitActivityIndicatorView.swift */; };
+		91E1738427BFD88900E03BD4 /* ActivityAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737C27BFD88900E03BD4 /* ActivityAnimationHelper.swift */; };
+		91E1738527BFD88900E03BD4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737D27BFD88900E03BD4 /* Extensions.swift */; };
+		91E1738627BFD88900E03BD4 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737E27BFD88900E03BD4 /* AnimationHelper.swift */; };
+		91E1738727BFD88900E03BD4 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737F27BFD88900E03BD4 /* CircleProgressView.swift */; };
+		91E1738827BFD88900E03BD4 /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1738027BFD88900E03BD4 /* BarProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +48,7 @@
 		91E1733627BFBC5C00E03BD4 /* Moneybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		91E1733D27BFBC5C00E03BD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		91E1734027BFBC5C00E03BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91E1733D27BFBC5C00E03BD4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		91E1734227BFBC6300E03BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91E1734527BFBC6300E03BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91E1734727BFBC6300E03BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +57,15 @@
 		91E1735627BFBC6400E03BD4 /* MoneyboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1735A27BFBC6400E03BD4 /* MoneyboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxUITests.swift; sourceTree = "<group>"; };
 		91E1735C27BFBC6400E03BD4 /* MoneyboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91E1737527BFCD4200E03BD4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		91E1737927BFD88900E03BD4 /* ActivityStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityStyleKit.swift; sourceTree = "<group>"; };
+		91E1737A27BFD88900E03BD4 /* ProgressStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressStyleKit.swift; sourceTree = "<group>"; };
+		91E1737B27BFD88900E03BD4 /* OrbitActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitActivityIndicatorView.swift; sourceTree = "<group>"; };
+		91E1737C27BFD88900E03BD4 /* ActivityAnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAnimationHelper.swift; sourceTree = "<group>"; };
+		91E1737D27BFD88900E03BD4 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		91E1737E27BFD88900E03BD4 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		91E1737F27BFD88900E03BD4 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		91E1738027BFD88900E03BD4 /* BarProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91E1737427BFCC2E00E03BD4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +119,12 @@
 			children = (
 				91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */,
 				91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */,
-				91E1733D27BFBC5C00E03BD4 /* ViewController.swift */,
-				91E1733F27BFBC5C00E03BD4 /* Main.storyboard */,
+				91E1733D27BFBC5C00E03BD4 /* MainVC.swift */,
 				91E1734227BFBC6300E03BD4 /* Assets.xcassets */,
 				91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */,
 				91E1734727BFBC6300E03BD4 /* Info.plist */,
+				91E1737527BFCD4200E03BD4 /* MainView.swift */,
+				91E1737727BFD88900E03BD4 /* Sources */,
 			);
 			path = Moneybox;
 			sourceTree = "<group>";
@@ -127,6 +146,29 @@
 			path = MoneyboxUITests;
 			sourceTree = "<group>";
 		};
+		91E1737727BFD88900E03BD4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				91E1737827BFD88900E03BD4 /* stylekit */,
+				91E1737B27BFD88900E03BD4 /* OrbitActivityIndicatorView.swift */,
+				91E1737C27BFD88900E03BD4 /* ActivityAnimationHelper.swift */,
+				91E1737D27BFD88900E03BD4 /* Extensions.swift */,
+				91E1737E27BFD88900E03BD4 /* AnimationHelper.swift */,
+				91E1737F27BFD88900E03BD4 /* CircleProgressView.swift */,
+				91E1738027BFD88900E03BD4 /* BarProgressView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		91E1737827BFD88900E03BD4 /* stylekit */ = {
+			isa = PBXGroup;
+			children = (
+				91E1737927BFD88900E03BD4 /* ActivityStyleKit.swift */,
+				91E1737A27BFD88900E03BD4 /* ProgressStyleKit.swift */,
+			);
+			path = stylekit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +185,9 @@
 			dependencies = (
 			);
 			name = Moneybox;
+			packageProductDependencies = (
+				91E1737327BFCC2E00E03BD4 /* SnapKit */,
+			);
 			productName = Moneybox;
 			productReference = 91E1733627BFBC5C00E03BD4 /* Moneybox.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +260,9 @@
 				Base,
 			);
 			mainGroup = 91E1732D27BFBC5C00E03BD4;
+			packageReferences = (
+				91E1737227BFCC2E00E03BD4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 91E1733727BFBC5C00E03BD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +281,6 @@
 			files = (
 				91E1734627BFBC6300E03BD4 /* LaunchScreen.storyboard in Resources */,
 				91E1734327BFBC6300E03BD4 /* Assets.xcassets in Resources */,
-				91E1734127BFBC5C00E03BD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91E1733E27BFBC5C00E03BD4 /* ViewController.swift in Sources */,
+				91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */,
+				91E1738827BFD88900E03BD4 /* BarProgressView.swift in Sources */,
+				91E1738527BFD88900E03BD4 /* Extensions.swift in Sources */,
+				91E1738727BFD88900E03BD4 /* CircleProgressView.swift in Sources */,
+				91E1738627BFD88900E03BD4 /* AnimationHelper.swift in Sources */,
+				91E1738127BFD88900E03BD4 /* ActivityStyleKit.swift in Sources */,
+				91E1738327BFD88900E03BD4 /* OrbitActivityIndicatorView.swift in Sources */,
+				91E1737627BFCD4200E03BD4 /* MainView.swift in Sources */,
+				91E1738227BFD88900E03BD4 /* ProgressStyleKit.swift in Sources */,
+				91E1738427BFD88900E03BD4 /* ActivityAnimationHelper.swift in Sources */,
 				91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */,
 				91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		91E1733F27BFBC5C00E03BD4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91E1734027BFBC5C00E03BD4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,9 +492,10 @@
 				INFOPLIST_FILE = Moneybox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,9 +521,10 @@
 				INFOPLIST_FILE = Moneybox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91E1737227BFCC2E00E03BD4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91E1737327BFCC2E00E03BD4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91E1737227BFCC2E00E03BD4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91E1732E27BFBC5C00E03BD4 /* Project object */;
 }
