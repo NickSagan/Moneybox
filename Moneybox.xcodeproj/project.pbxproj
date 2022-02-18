@@ -25,6 +25,7 @@
 		91E1738627BFD88900E03BD4 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737E27BFD88900E03BD4 /* AnimationHelper.swift */; };
 		91E1738727BFD88900E03BD4 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1737F27BFD88900E03BD4 /* CircleProgressView.swift */; };
 		91E1738827BFD88900E03BD4 /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1738027BFD88900E03BD4 /* BarProgressView.swift */; };
+		91E1738C27BFE02200E03BD4 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1738B27BFE02200E03BD4 /* GoalModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		91E1737E27BFD88900E03BD4 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		91E1737F27BFD88900E03BD4 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		91E1738027BFD88900E03BD4 /* BarProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
+		91E1738B27BFE02200E03BD4 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */,
 				91E1734727BFBC6300E03BD4 /* Info.plist */,
 				91E1737727BFD88900E03BD4 /* Sources */,
+				91E1738B27BFE02200E03BD4 /* GoalModel.swift */,
 			);
 			path = Moneybox;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				91E1738127BFD88900E03BD4 /* ActivityStyleKit.swift in Sources */,
 				91E1738327BFD88900E03BD4 /* OrbitActivityIndicatorView.swift in Sources */,
 				91E1737627BFCD4200E03BD4 /* MainView.swift in Sources */,
+				91E1738C27BFE02200E03BD4 /* GoalModel.swift in Sources */,
 				91E1738227BFD88900E03BD4 /* ProgressStyleKit.swift in Sources */,
 				91E1738427BFD88900E03BD4 /* ActivityAnimationHelper.swift in Sources */,
 				91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */,
