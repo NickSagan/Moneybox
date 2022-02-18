@@ -161,7 +161,8 @@ class MainView: UIView {
         }
         
         progresslabel.snp.makeConstraints { make in
-            make.centerX.equalTo(progressBar.snp.centerX)
+            make.left.equalTo(progressBar.snp.left).offset(10)
+            make.right.equalTo(progressBar.snp.right).offset(-10)
             make.centerY.equalTo(progressBar.snp.centerY)
         }
     }
