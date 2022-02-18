@@ -13,6 +13,7 @@ class MainView: UIView {
     let goalImage: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(named: "addGoalImage")
+        img.contentMode = .scaleAspectFit
         return img
     }()
     
@@ -37,7 +38,7 @@ class MainView: UIView {
     
     let progressBar: BarProgressView = {
        let pr = BarProgressView()
-        pr.progress = 0.0
+        pr.progress = 0.5
         pr.progressColor = .systemGreen
         pr.showTriangle = true
         return pr
@@ -54,10 +55,12 @@ class MainView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.backgroundColor = UIColor.white.withAlphaComponent(0)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.white.withAlphaComponent(0)
         addSubviews()
         setupConstraints()
         setAppearance()
@@ -93,6 +96,22 @@ class MainView: UIView {
             make.top.equalTo(goalImage.snp.bottom).offset(20)
             make.left.equalTo(goalImage.snp.left)
             make.right.equalTo(goalImage.snp.right)
+        }
+        
+        weeksLeft.snp.makeConstraints { make in
+            make.top.equalTo(goalName.snp.bottom).offset(20)
+            make.centerX.equalTo(goalImage.snp.centerX)
+        }
+        
+        progressBar.snp.makeConstraints { make in
+            make.top.equalTo(weeksLeft.snp.bottom).offset(20)
+            make.left.equalTo(goalImage.snp.left)
+            make.right.equalTo(goalImage.snp.right)
+        }
+        
+        moneyLeft.snp.makeConstraints { make in
+            make.top.equalTo(progressBar.snp.bottom).offset(20)
+            make.centerX.equalTo(goalImage.snp.centerX)
         }
     }
     

@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window?.rootViewController = nc
 //        }
         let nc = UINavigationController(rootViewController: MainVC())
-        nc.navigationBar.backgroundColor = .systemBackground
+        nc.navigationBar.backgroundColor = UIColor.white.withAlphaComponent(0)
         window?.rootViewController = nc
         window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()

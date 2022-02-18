@@ -14,11 +14,13 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         mainView = MainView()
+        mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
         view.addSubview(mainView)
         mainView.translatesAutoresizingMaskIntoConstraints = false
         mainView.snp.makeConstraints { make in
-            make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+            make.edges.equalTo(view).inset(UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10))
         }
     }
 

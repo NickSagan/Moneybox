@@ -120,10 +120,10 @@
 				91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */,
 				91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */,
 				91E1733D27BFBC5C00E03BD4 /* MainVC.swift */,
+				91E1737527BFCD4200E03BD4 /* MainView.swift */,
 				91E1734227BFBC6300E03BD4 /* Assets.xcassets */,
 				91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */,
 				91E1734727BFBC6300E03BD4 /* Info.plist */,
-				91E1737527BFCD4200E03BD4 /* MainView.swift */,
 				91E1737727BFD88900E03BD4 /* Sources */,
 			);
 			path = Moneybox;
