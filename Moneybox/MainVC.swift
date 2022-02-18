@@ -11,6 +11,7 @@ import SnapKit
 class MainVC: UIViewController {
     
     var mainView: MainView!
+    var goal: GoalModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,29 @@ class MainVC: UIViewController {
         mainView.snp.makeConstraints { make in
             make.edges.equalTo(view).inset(UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10))
         }
-
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareGoal))
+        
+        goal = GoalModel(name: "Lego NinjaGo", photo: UIImage(named: "piggy")!, price: 9000, savings: 3400, income: 1000)
+        
+        refreshGoal()
     }
-
+    
+    func refreshGoal() {
+        mainView.goalName.text = goal.name
+        mainView.weeksLeft.text = "Осталось копить\nещё \((goal.price - goal.savings) / goal.income + 1) недель"
+        mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
+        mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
+        mainView.goalImage.image = goal.photo
+    }
+    
+    @objc func addGoal() {
+        print("addGoal")
+    }
+    
+    @objc func shareGoal() {
+        print("shareGoal")
+    }
 }
 
