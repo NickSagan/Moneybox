@@ -87,12 +87,40 @@ class AddGoalView: UIView {
 //MARK: - SETUP CONSTRAINTS
     
     func setupConstraints() {
-//        goalImage.snp.makeConstraints { make in
-//            make.top.equalTo(self).offset(20)
-//            make.left.equalTo(self).offset(40)
-//            make.right.equalTo(self).offset(-40)
-//            make.height.equalTo(self).multipliedBy(0.4)
-//        }
+        header.snp.makeConstraints { make in
+            make.top.equalTo(self).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(30)
+        }
+        
+        nameInput.snp.makeConstraints { make in
+            make.top.equalTo(header.snp.bottom).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(30)
+        }
+        
+        priceInput.snp.makeConstraints { make in
+            make.top.equalTo(nameInput.snp.bottom).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(30)
+        }
+        
+        savingsInput.snp.makeConstraints { make in
+            make.top.equalTo(priceInput.snp.bottom).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(30)
+        }
+        
+        incomeInput.snp.makeConstraints { make in
+            make.top.equalTo(savingsInput.snp.bottom).offset(20)
+            make.left.equalTo(self).offset(20)
+            make.right.equalTo(self).offset(-20)
+            make.height.equalTo(30)
+        }
 
     }
     
