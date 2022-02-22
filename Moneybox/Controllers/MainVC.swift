@@ -12,23 +12,15 @@ class MainVC: UIViewController {
     
     var mainView: MainView!
     var goal: GoalModel?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setAppearance()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         GoalManager.shared.delegate = self
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        mainView = MainView()
-        mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
-        view.addSubview(mainView)
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        mainView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
-        }
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareGoal))
+        setupVC()
         
         goal = GoalModel(name: "Lego NinjaGo", photo: UIImage(named: "piggy")!, price: 9000, savings: 3400, income: 1000)
         
@@ -59,9 +51,33 @@ class MainVC: UIViewController {
     @objc func shareGoal() {
         print("shareGoal")
     }
+    
+    func setupVC() {
+        mainView = MainView()
+        mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        view.addSubview(mainView)
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareGoal))
+    }
+    
+    func setAppearance() {
+        if traitCollection.userInterfaceStyle == .dark {
+            self.view.backgroundColor = .systemGray
+        } else {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        }
+    }
 }
 
+//MARK: - GoalModelDelegate
+
 extension MainVC: GoalModelDelegate {
+    
     func goalModelRecieved(_ goalModel: GoalModel) {
         goal = goalModel
         refreshGoal()
