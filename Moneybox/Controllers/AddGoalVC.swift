@@ -10,15 +10,69 @@ import UIKit
 class AddGoalVC: UIViewController {
     
     var addGoalView: AddGoalView!
-    var done: UIBarButtonItem!
+    var addImageView: AddImageView!
+    
+    var currentImage: UIImage!
+    var name: String!
+    var price: Int!
+    var savings: Int!
+    var income: Int!
+    
+    let nextButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        btn.style = .plain
+        btn.title = "Далее"
+        btn.isEnabled = false
+        btn.action = #selector(addGoal)
+        return btn
+    }()
+    
+    let finishButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        btn.style = .plain
+        btn.title = "Завершить"
+        btn.isEnabled = false
+        btn.action = #selector(addGoalModel)
+        return btn
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
+    @objc private func addGoalModel() {
+    
+    }
+    
+    @objc private func addImage() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
     @objc private func addGoal() {
-
+        // TODO: add animation
+        
+        name = addGoalView.nameInput.text
+        let priceValue = addGoalView.priceInput.text ?? "0"
+        price = Int(priceValue)!
+        let savingsValue = addGoalView.savingsInput.text ?? "0"
+        savings = Int(savingsValue)!
+        let incomeValue = addGoalView.incomeInput.text ?? "0"
+        income = Int(incomeValue)!
+        
+        // addGoalView => addImageView
+        addGoalView.removeFromSuperview()
+        addImageView = AddImageView()
+        addImageView.backgroundColor = .systemBackground
+        addImageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(addImageView)
+        addImageView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        }
+        addImageView.button.addTarget(self, action: #selector(addImage), for: .touchUpInside)
     }
     
     func setupUI() {
@@ -31,9 +85,7 @@ class AddGoalVC: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         
-        done = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(addGoal))
-        done.isEnabled = false
-        navigationItem.rightBarButtonItem = done
+        navigationItem.rightBarButtonItem = nextButton
         
         // Tap recognizer to dismiss keyboard
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(tap))
@@ -62,9 +114,19 @@ extension AddGoalVC: UITextFieldDelegate {
     
     func checkTextfields() {
         if addGoalView.incomeInput.text != "" && addGoalView.savingsInput.text != "" && addGoalView.priceInput.text != "" && addGoalView.nameInput.text != "" {
-            done.isEnabled = true
+            nextButton.isEnabled = true
         } else {
-            done.isEnabled = false
+            nextButton.isEnabled = false
         }
+    }
+}
+
+//MARK: - UIImagePicker
+extension AddGoalVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        dismiss(animated: true)
+        currentImage = image
     }
 }
