@@ -7,13 +7,7 @@
 
 import UIKit
 
-protocol GoalModelDelegate {
-    func goalModelRecieved(_ goalModel: GoalModel)
-}
-
 class AddGoalVC: UIViewController {
-    
-    var delegate: GoalModelDelegate?
     
     var addGoalView: AddGoalView!
     var addImageView: AddImageView!
@@ -49,8 +43,8 @@ class AddGoalVC: UIViewController {
     
     @objc private func addGoalModel() {
         let goal = GoalModel(name: name, photo: currentImage, price: price, savings: savings, income: income)
-        print(goal)
-        delegate?.goalModelRecieved(goal)
+        GoalManager.shared.setGoal(goal)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func addImage() {
