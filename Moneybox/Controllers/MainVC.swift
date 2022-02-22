@@ -50,9 +50,7 @@ class MainVC: UIViewController {
     
     @objc func addGoal() {
         let vc = AddGoalVC()
-        vc.modalPresentationStyle = .pageSheet
-        vc.modalTransitionStyle = .coverVertical
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func shareGoal() {

@@ -28,9 +28,7 @@ class AddGoalView: UIView {
         tf.layer.borderWidth = 1
         tf.layer.borderColor = UIColor.systemGray.cgColor
         tf.layer.cornerRadius = 8
-        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
         tf.returnKeyType = .done
-        
         return tf
     }()
     
@@ -43,7 +41,6 @@ class AddGoalView: UIView {
         tf.layer.borderWidth = 1
         tf.layer.borderColor = UIColor.systemGray.cgColor
         tf.layer.cornerRadius = 8
-        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
         tf.keyboardType = .decimalPad
         tf.returnKeyType = .done
         return tf
@@ -58,7 +55,6 @@ class AddGoalView: UIView {
         tf.layer.borderWidth = 1
         tf.layer.borderColor = UIColor.systemGray.cgColor
         tf.layer.cornerRadius = 8
-        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
         tf.keyboardType = .decimalPad
         tf.returnKeyType = .done
         return tf
@@ -73,7 +69,6 @@ class AddGoalView: UIView {
         tf.layer.borderWidth = 1
         tf.layer.borderColor = UIColor.systemGray.cgColor
         tf.layer.cornerRadius = 8
-        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
         tf.keyboardType = .decimalPad
         tf.returnKeyType = .done
         return tf
