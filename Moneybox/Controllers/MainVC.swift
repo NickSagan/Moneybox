@@ -15,7 +15,9 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        GoalManager.shared.delegate = self
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         mainView = MainView()
         mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
