@@ -21,7 +21,7 @@ class MainVC: UIViewController {
         view.addSubview(mainView)
         mainView.translatesAutoresizingMaskIntoConstraints = false
         mainView.snp.makeConstraints { make in
-            make.edges.equalTo(view).inset(UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10))
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
@@ -50,8 +50,9 @@ class MainVC: UIViewController {
     
     @objc func addGoal() {
         let vc = AddGoalVC()
-        navigationController?.modalPresentationStyle = .pageSheet
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .pageSheet
+        vc.modalTransitionStyle = .coverVertical
+        present(vc, animated: true)
     }
     
     @objc func shareGoal() {

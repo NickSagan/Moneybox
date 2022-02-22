@@ -12,7 +12,7 @@ class AddGoalView: UIView {
 
     let header: UILabel = {
         let label = UILabel()
-        label.text = "Добавление цели"
+        label.text = "Добавление цели:"
         label.font = UIFont.systemFont(ofSize: 24)
         label.textAlignment = .left
         label.frame.size.height = 30
@@ -21,37 +21,61 @@ class AddGoalView: UIView {
     
     let nameInput: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "На что вы копите?"
+        tf.placeholder = " На что вы копите?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 30
+        tf.layer.borderWidth = 1
+        tf.layer.borderColor = UIColor.systemGray.cgColor
+        tf.layer.cornerRadius = 8
+        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
+        tf.returnKeyType = .done
+        
         return tf
     }()
     
     let priceInput: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Сколько нужно накопить?"
+        tf.placeholder = " Сколько нужно накопить?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 30
+        tf.layer.borderWidth = 1
+        tf.layer.borderColor = UIColor.systemGray.cgColor
+        tf.layer.cornerRadius = 8
+        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
+        tf.keyboardType = .decimalPad
+        tf.returnKeyType = .done
         return tf
     }()
     
     let savingsInput: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Сколько уже накоплено?"
+        tf.placeholder = " Сколько уже накоплено?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 30
+        tf.layer.borderWidth = 1
+        tf.layer.borderColor = UIColor.systemGray.cgColor
+        tf.layer.cornerRadius = 8
+        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
+        tf.keyboardType = .decimalPad
+        tf.returnKeyType = .done
         return tf
     }()
     
     let incomeInput: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Сколько вы получаете в неделю?"
+        tf.placeholder = " Сколько вы получаете в неделю?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 30
+        tf.layer.borderWidth = 1
+        tf.layer.borderColor = UIColor.systemGray.cgColor
+        tf.layer.cornerRadius = 8
+        tf.layer.backgroundColor = UIColor.systemGray4.cgColor
+        tf.keyboardType = .decimalPad
+        tf.returnKeyType = .done
         return tf
     }()
     
