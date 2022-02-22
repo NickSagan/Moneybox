@@ -12,6 +12,7 @@
 		91346E0527C55319007FFBA3 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 91346E0427C55319007FFBA3 /* IQKeyboardManagerSwift */; };
 		91346E0727C55521007FFBA3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0627C55521007FFBA3 /* TextField.swift */; };
 		91346E0927C55F9C007FFBA3 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0827C55F9C007FFBA3 /* AddImageView.swift */; };
+		91346E0B27C57182007FFBA3 /* GoalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0A27C57182007FFBA3 /* GoalManager.swift */; };
 		91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */; };
 		91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */; };
 		91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* MainVC.swift */; };
@@ -48,6 +49,7 @@
 		91346E0127C542E1007FFBA3 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 		91346E0627C55521007FFBA3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		91346E0827C55F9C007FFBA3 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		91346E0A27C57182007FFBA3 /* GoalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalManager.swift; sourceTree = "<group>"; };
 		91E1733627BFBC5C00E03BD4 /* Moneybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				91E1738B27BFE02200E03BD4 /* GoalModel.swift */,
+				91346E0A27C57182007FFBA3 /* GoalManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				91346E0227C542E1007FFBA3 /* AddGoalView.swift in Sources */,
 				91346E0027C5411D007FFBA3 /* AddGoalVC.swift in Sources */,
 				91E1738C27BFE02200E03BD4 /* GoalModel.swift in Sources */,
+				91346E0B27C57182007FFBA3 /* GoalManager.swift in Sources */,
 				91346E0727C55521007FFBA3 /* TextField.swift in Sources */,
 				91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */,
 				91346E0927C55F9C007FFBA3 /* AddImageView.swift in Sources */,
