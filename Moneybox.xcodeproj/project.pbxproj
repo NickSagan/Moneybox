@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91346E0027C5411D007FFBA3 /* AddGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346DFF27C5411D007FFBA3 /* AddGoalVC.swift */; };
+		91346E0227C542E1007FFBA3 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0127C542E1007FFBA3 /* AddGoalView.swift */; };
 		91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */; };
 		91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */; };
 		91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* MainVC.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91346DFF27C5411D007FFBA3 /* AddGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalVC.swift; sourceTree = "<group>"; };
+		91346E0127C542E1007FFBA3 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
 		91E1733627BFBC5C00E03BD4 /* Moneybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91346DFA27C5407B007FFBA3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91E1733D27BFBC5C00E03BD4 /* MainVC.swift */,
+				91346DFF27C5411D007FFBA3 /* AddGoalVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		91346DFB27C54083007FFBA3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91E1737527BFCD4200E03BD4 /* MainView.swift */,
+				91346E0127C542E1007FFBA3 /* AddGoalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91346DFC27C54088007FFBA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91E1738B27BFE02200E03BD4 /* GoalModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91346DFD27C540AF007FFBA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91E1734227BFBC6300E03BD4 /* Assets.xcassets */,
+				91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91346DFE27C540F6007FFBA3 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				91E1738E27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		91E1732D27BFBC5C00E03BD4 = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +154,11 @@
 			children = (
 				91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */,
 				91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */,
-				91E1733D27BFBC5C00E03BD4 /* MainVC.swift */,
-				91E1738B27BFE02200E03BD4 /* GoalModel.swift */,
-				91E1737527BFCD4200E03BD4 /* MainView.swift */,
-				91E1738E27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift */,
-				91E1734227BFBC6300E03BD4 /* Assets.xcassets */,
-				91E1734427BFBC6300E03BD4 /* LaunchScreen.storyboard */,
+				91346DFC27C54088007FFBA3 /* Models */,
+				91346DFB27C54083007FFBA3 /* Views */,
+				91346DFA27C5407B007FFBA3 /* Controllers */,
+				91346DFE27C540F6007FFBA3 /* Supporting files */,
+				91346DFD27C540AF007FFBA3 /* Resources */,
 				91E1734727BFBC6300E03BD4 /* Info.plist */,
 			);
 			path = Moneybox;
@@ -274,6 +320,8 @@
 				91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */,
 				91E1737627BFCD4200E03BD4 /* MainView.swift in Sources */,
 				91E1738F27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift in Sources */,
+				91346E0227C542E1007FFBA3 /* AddGoalView.swift in Sources */,
+				91346E0027C5411D007FFBA3 /* AddGoalVC.swift in Sources */,
 				91E1738C27BFE02200E03BD4 /* GoalModel.swift in Sources */,
 				91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */,
 				91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */,
