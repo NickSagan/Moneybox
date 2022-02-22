@@ -11,7 +11,7 @@ import SnapKit
 class MainVC: UIViewController {
     
     var mainView: MainView!
-    var goal: GoalModel!
+    var goal: GoalModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +33,19 @@ class MainVC: UIViewController {
     }
     
     func refreshGoal() {
-        mainView.goalName.text = goal.name
-        mainView.weeksLeft.text = "Осталось копить\nещё \((goal.price - goal.savings) / goal.income + 1) недель"
-        mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
-        mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
-        mainView.goalImage.image = goal.photo
+        if let goal = self.goal {
+            mainView.goalName.text = "Цель: \(goal.name)"
+            mainView.weeksLeft.text = "Осталось копить\nещё \((goal.price - goal.savings) / goal.income + 1) недель"
+            mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
+            mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
+            mainView.goalImage.image = goal.photo
+        } else {
+            mainView.goalName.text = "Цель: не указана"
+            mainView.weeksLeft.text = "Осталось копить\nещё Х недель"
+            mainView.progresslabel.text = "Накоплено 0 из 0 рублей"
+            mainView.moneyLeft.text = "Накопи ещё 0 рублей"
+            mainView.goalImage.image = UIImage(named: "piggy")!
+        }
     }
     
     @objc func addGoal() {
