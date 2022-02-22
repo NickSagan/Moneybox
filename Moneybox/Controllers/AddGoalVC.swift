@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol GoalModelDelegate {
+    func goalModelRecieved(_ goalModel: GoalModel)
+}
+
 class AddGoalVC: UIViewController {
+    
+    var delegate: GoalModelDelegate?
     
     var addGoalView: AddGoalView!
     var addImageView: AddImageView!
@@ -17,7 +23,7 @@ class AddGoalVC: UIViewController {
     var price: Int!
     var savings: Int!
     var income: Int!
-    
+
     let nextButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
         btn.style = .plain
@@ -42,7 +48,9 @@ class AddGoalVC: UIViewController {
     }
     
     @objc private func addGoalModel() {
-    
+        let goal = GoalModel(name: name, photo: currentImage, price: price, savings: savings, income: income)
+        print(goal)
+        delegate?.goalModelRecieved(goal)
     }
     
     @objc private func addImage() {
@@ -54,7 +62,6 @@ class AddGoalVC: UIViewController {
     
     @objc private func addGoal() {
         // TODO: add animation
-        
         name = addGoalView.nameInput.text
         let priceValue = addGoalView.priceInput.text ?? "0"
         price = Int(priceValue)!
@@ -73,6 +80,8 @@ class AddGoalVC: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         addImageView.button.addTarget(self, action: #selector(addImage), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = finishButton
+        finishButton.target = self
     }
     
     func setupUI() {
@@ -86,6 +95,7 @@ class AddGoalVC: UIViewController {
         }
         
         navigationItem.rightBarButtonItem = nextButton
+        nextButton.target = self
         
         // Tap recognizer to dismiss keyboard
         let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(tap))
@@ -128,5 +138,7 @@ extension AddGoalVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         currentImage = image
+        addImageView.imageView.image = currentImage
+        finishButton.isEnabled = true
     }
 }
