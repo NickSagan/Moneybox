@@ -49,7 +49,9 @@ class MainVC: UIViewController {
     }
     
     @objc func addGoal() {
-        print("addGoal")
+        let vc = AddGoalVC()
+        navigationController?.modalPresentationStyle = .pageSheet
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func shareGoal() {
