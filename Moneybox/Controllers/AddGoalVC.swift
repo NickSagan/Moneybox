@@ -20,11 +20,21 @@ class AddGoalVC: UIViewController {
         addGoalView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
-
+        
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(shareGoal))
 //
 //        goal = GoalModel(name: "Lego NinjaGo", photo: UIImage(named: "piggy")!, price: 9000, savings: 3400, income: 1000)
 //
 //        refreshGoal()
+        
+        // Tap recognizer to dismiss keyboard
+        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(tap))
+        tapGestureReconizer.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGestureReconizer)
+    }
+    
+    // Dismiss keyboard
+    @objc private func tap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
