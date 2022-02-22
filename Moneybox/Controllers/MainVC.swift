@@ -15,6 +15,7 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         mainView = MainView()
         mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
@@ -58,3 +59,9 @@ class MainVC: UIViewController {
     }
 }
 
+extension MainVC: GoalModelDelegate {
+    func goalModelRecieved(_ goalModel: GoalModel) {
+        goal = goalModel
+        refreshGoal()
+    }
+}
