@@ -19,8 +19,8 @@ class AddGoalView: UIView {
         return label
     }()
     
-    let nameInput: UITextField = {
-        let tf = UITextField()
+    let nameInput: TextField = {
+        let tf = TextField()
         tf.placeholder = " На что вы копите?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
@@ -34,8 +34,8 @@ class AddGoalView: UIView {
         return tf
     }()
     
-    let priceInput: UITextField = {
-        let tf = UITextField()
+    let priceInput: TextField = {
+        let tf = TextField()
         tf.placeholder = " Сколько нужно накопить?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
@@ -49,8 +49,8 @@ class AddGoalView: UIView {
         return tf
     }()
     
-    let savingsInput: UITextField = {
-        let tf = UITextField()
+    let savingsInput: TextField = {
+        let tf = TextField()
         tf.placeholder = " Сколько уже накоплено?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
@@ -64,8 +64,8 @@ class AddGoalView: UIView {
         return tf
     }()
     
-    let incomeInput: UITextField = {
-        let tf = UITextField()
+    let incomeInput: TextField = {
+        let tf = TextField()
         tf.placeholder = " Сколько вы получаете в неделю?"
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
