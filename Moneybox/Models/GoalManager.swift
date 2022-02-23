@@ -5,7 +5,7 @@
 //  Created by Nick Sagan on 22.02.2022.
 //
 
-import Foundation
+import UIKit
 
 protocol GoalModelDelegate {
     
@@ -16,11 +16,10 @@ class GoalManager {
     
     static let shared = GoalManager()
     private init() { }
-    
     var delegate: GoalModelDelegate?
-    private var goalModel: GoalModel?
+    private let defaults = UserDefaults.standard
     
-    func getGoal() -> GoalModel? {
+    func getGoal() -> GoalModel {
         return goalModel
     }
     
@@ -29,24 +28,67 @@ class GoalManager {
         delegate?.goalModelRecieved(goal)
     }
     
-//    var goalModel: GoalModel? {
-//        get {
-//            guard let data = try? Data(contentsOf: .savedGoal) else { return nil }
-//            return (try? JSONDecoder().decode(GoalModel.self, from: data)) ?? nil
-//        }
-//        set {
-//            try? JSONEncoder().encode(newValue).write(to: .savedGoal)
-//            delegate?.goalModelRecieved(goalModel!)
-//        }
-//    }
-}
+    private var goalModel: GoalModel {
+        get {
+            let image = loadImageFromDiskWith(fileName: "goalImage") ?? UIImage(named: "piggy")!
+            let name = defaults.string(forKey: "name") ?? "Добавьте цель"
+            let price = defaults.integer(forKey: "price")
+            let savings = defaults.integer(forKey: "savings")
+            let income = defaults.integer(forKey: "income")
+            
+            let goal = GoalModel(name: name, photo: image, price: price, savings: savings, income: income)
+            return goal
+        }
+        
+        set {
+            saveImage(imageName: "goalImage", image: newValue.photo)
+            defaults.setValue(newValue.name, forKey: "name")
+            defaults.setValue(newValue.price, forKey: "price")
+            defaults.setValue(newValue.savings, forKey: "savings")
+            defaults.setValue(newValue.income, forKey: "income")
+        }
+    }
+    
+    private func saveImage(imageName: String, image: UIImage) {
+        
+     guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
 
-extension URL {
-    static var savedGoal: URL {
-        let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let bundleID = Bundle.main.bundleIdentifier ?? "MoneyBox"
-        let subDirectory = applicationSupport.appendingPathComponent(bundleID, isDirectory: true)
-        try? FileManager.default.createDirectory(at: subDirectory, withIntermediateDirectories: true, attributes: nil)
-        return subDirectory.appendingPathComponent("savedGoal.json")
+        let fileName = imageName
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        guard let data = image.jpegData(compressionQuality: 1) else { return }
+
+        //Checks if file exists, removes it if so.
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+                print("Removed old image")
+            } catch let removeError {
+                print("couldn't remove file at path", removeError)
+            }
+
+        }
+
+        do {
+            try data.write(to: fileURL)
+        } catch let error {
+            print("error saving file with error", error)
+        }
+    }
+
+    private func loadImageFromDiskWith(fileName: String) -> UIImage? {
+
+      let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+
+        if let dirPath = paths.first {
+            let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
+            return image
+
+        }
+
+        return nil
     }
 }
