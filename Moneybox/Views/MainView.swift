@@ -14,6 +14,8 @@ class MainView: UIView {
         let img = UIImageView()
         img.image = UIImage(named: "piggy")
         img.contentMode = .scaleAspectFit
+        img.layer.masksToBounds = true
+        img.layer.cornerRadius = 40
         return img
     }()
     
