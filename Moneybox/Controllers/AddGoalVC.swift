@@ -50,6 +50,9 @@ class AddGoalVC: UIViewController {
     @objc private func addImage() {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
+        picker.sourceType = .camera
+        picker.showsCameraControls = true
+        picker.cameraDevice = .rear
         picker.delegate = self
         present(picker, animated: true)
     }
