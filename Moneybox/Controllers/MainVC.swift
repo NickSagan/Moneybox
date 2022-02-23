@@ -11,36 +11,25 @@ import SnapKit
 class MainVC: UIViewController {
     
     var mainView: MainView!
-    var goal: GoalModel?
+    let goalManager = GoalManager.shared
     
     override func viewWillAppear(_ animated: Bool) {
         setAppearance()
+        refreshGoal(goalManager.getGoal())
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GoalManager.shared.delegate = self
+        goalManager.delegate = self
         setupVC()
-        
-        goal = GoalModel(name: "Lego NinjaGo", photo: UIImage(named: "piggy")!, price: 9000, savings: 3400, income: 1000)
-        
-        refreshGoal()
     }
     
-    func refreshGoal() {
-        if let goal = self.goal {
-            mainView.goalName.text = "Цель: \(goal.name)"
-            mainView.weeksLeft.text = "Осталось копить\nещё \((goal.price - goal.savings) / goal.income + 1) недель"
-            mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
-            mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
-            mainView.goalImage.image = goal.photo
-        } else {
-            mainView.goalName.text = "Цель: не указана"
-            mainView.weeksLeft.text = "Осталось копить\nещё Х недель"
-            mainView.progresslabel.text = "Накоплено 0 из 0 рублей"
-            mainView.moneyLeft.text = "Накопи ещё 0 рублей"
-            mainView.goalImage.image = UIImage(named: "piggy")!
-        }
+    func refreshGoal(_ goal: GoalModel) {
+        mainView.goalName.text = "Цель: \(goal.name)"
+        mainView.weeksLeft.text = "Осталось копить\nещё \((goal.price - goal.savings) / (goal.income + 1)) недель"
+        mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
+        mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
+        mainView.goalImage.image = goal.photo
     }
     
     @objc func addGoal() {
@@ -79,7 +68,6 @@ class MainVC: UIViewController {
 extension MainVC: GoalModelDelegate {
     
     func goalModelRecieved(_ goalModel: GoalModel) {
-        goal = goalModel
-        refreshGoal()
+        refreshGoal(goalModel)
     }
 }
