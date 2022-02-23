@@ -30,6 +30,33 @@ class MainVC: UIViewController {
         mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
         mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
         mainView.goalImage.image = goal.photo
+        mainView.progressBar.progress = ((CGFloat(goal.savings) * 100.0) / CGFloat(goal.price)) / 100.0
+    }
+    
+    func calculate(amount: Int) {
+        if amount == 0 { return }
+        var goal = goalManager.getGoal()
+        
+        let counter = amount > 0 ? 1 : -1
+        let repeatTimes = abs(amount)
+        
+        let duration: Double = 1.5 // how fast animation will be
+        let sleepTime = UInt32(duration/Double(repeatTimes) * 1000000.0)
+        
+        DispatchQueue.global().async {
+            for _ in 1...repeatTimes {
+                goal.savings += counter
+                usleep(sleepTime)
+                DispatchQueue.main.async {
+//                    self.mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
+                    self.mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
+                    self.mainView.progressBar.progress = ((CGFloat(goal.savings) * 100.0) / CGFloat(goal.price)) / 100.0
+                }
+            }
+            DispatchQueue.main.async {
+                self.goalManager.setGoal(goal)
+            }
+        }
     }
     
     @objc func addGoal() {
@@ -38,17 +65,48 @@ class MainVC: UIViewController {
     }
     
     @objc func shareGoal() {
-        print("shareGoal")
+
+    }
+    
+    @objc func plusButton() {
+        let ac = UIAlertController(title: "Добавить средства", message: nil, preferredStyle: .alert)
+        ac.addTextField { textField in
+            textField.placeholder = "500"
+            textField.keyboardType = .decimalPad
+        }
+        ac.addAction(UIAlertAction(title: "Добавить", style: .default, handler: { _ in
+            let textField = ac.textFields![0] as UITextField
+            let amount = Int(textField.text ?? "0")!
+            self.calculate(amount: amount)
+        }))
+        ac.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        self.present(ac, animated: true, completion: nil)
+    }
+    
+    @objc func minusButton() {
+        let ac = UIAlertController(title: "Убавить средства", message: nil, preferredStyle: .alert)
+        ac.addTextField { textField in
+            textField.placeholder = "500"
+            textField.keyboardType = .decimalPad
+        }
+        ac.addAction(UIAlertAction(title: "Убавить", style: .default, handler: { _ in
+            let textField = ac.textFields![0] as UITextField
+            let amount = Int(textField.text ?? "0")!
+            self.calculate(amount: -amount)
+        }))
+        ac.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+        self.present(ac, animated: true, completion: nil)
     }
     
     func setupVC() {
         mainView = MainView()
-        mainView.backgroundColor = UIColor.white.withAlphaComponent(0)
         view.addSubview(mainView)
         mainView.translatesAutoresizingMaskIntoConstraints = false
         mainView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
+        mainView.plusButton.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
+        mainView.minusButton.addTarget(self, action: #selector(minusButton), for: .touchUpInside)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareGoal))
