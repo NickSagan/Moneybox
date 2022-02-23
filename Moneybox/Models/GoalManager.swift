@@ -49,6 +49,8 @@ class GoalManager {
         }
     }
     
+    // https://stackoverflow.com/questions/37344822/saving-image-and-then-loading-it-in-swift-ios
+    
     private func saveImage(imageName: String, image: UIImage) {
         
      guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }

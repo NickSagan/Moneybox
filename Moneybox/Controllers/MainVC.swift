@@ -65,7 +65,11 @@ class MainVC: UIViewController {
     }
     
     @objc func shareGoal() {
-
+        let goal = goalManager.getGoal()
+        let items: [Any] = ["Привет! Моя цель: \(goal.name). Всего надо накопить: \(goal.price), я уже накопил \(goal.savings), помоги мне накопить оставшуюсь сумму. Спасибо! Сообщение отправлено из мобильного приложения Копилка-MoneyBox для iPhone"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        ac.excludedActivityTypes = [.airDrop, .addToReadingList, .openInIBooks, .saveToCameraRoll]
+        present(ac, animated: true)
     }
     
     @objc func plusButton() {
