@@ -118,7 +118,7 @@ class MainVC: UIViewController {
     
     func setAppearance() {
         if traitCollection.userInterfaceStyle == .dark {
-            self.view.backgroundColor = .systemGray
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "darkbg")!)
         } else {
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         }
