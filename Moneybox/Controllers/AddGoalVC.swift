@@ -9,6 +9,8 @@ import UIKit
 
 class AddGoalVC: UIViewController {
     
+    let imagePicker = UIImagePickerController()
+    
     var addGoalView: AddGoalView!
     var addImageView: AddImageView!
     
@@ -39,6 +41,7 @@ class AddGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        imagePicker.delegate = self
     }
     
     @objc private func addGoalModel() {
@@ -48,13 +51,15 @@ class AddGoalVC: UIViewController {
     }
     
     @objc private func addImage() {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.sourceType = .camera
-        picker.showsCameraControls = true
-        picker.cameraDevice = .rear
-        picker.delegate = self
-        present(picker, animated: true)
+        let alert = UIAlertController(title: "Выберите фото", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Камера", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        alert.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
+            self.openGallery()
+        }))
+        alert.addAction(UIAlertAction.init(title: "Отмена", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc private func addGoal() {
@@ -137,5 +142,24 @@ extension AddGoalVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         currentImage = image
         addImageView.imageView.image = currentImage
         finishButton.isEnabled = true
+    }
+    
+    func openCamera() {
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)) {
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else {
+            let alert  = UIAlertController(title: "Ошибка", message: "У вас нет камеры", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery() {
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
     }
 }
