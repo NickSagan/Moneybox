@@ -13,6 +13,9 @@
 		91346E0727C55521007FFBA3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0627C55521007FFBA3 /* TextField.swift */; };
 		91346E0927C55F9C007FFBA3 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0827C55F9C007FFBA3 /* AddImageView.swift */; };
 		91346E0B27C57182007FFBA3 /* GoalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E0A27C57182007FFBA3 /* GoalManager.swift */; };
+		91346E6827C7D989007FFBA3 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E5D27C7D989007FFBA3 /* TextFieldEffects.swift */; };
+		91346E6B27C7D989007FFBA3 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E6027C7D989007FFBA3 /* KaedeTextField.swift */; };
+		91346E7027C7E7B6007FFBA3 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E6F27C7E7B6007FFBA3 /* CongratsView.swift */; };
 		91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */; };
 		91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */; };
 		91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* MainVC.swift */; };
@@ -50,6 +53,11 @@
 		91346E0627C55521007FFBA3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		91346E0827C55F9C007FFBA3 /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
 		91346E0A27C57182007FFBA3 /* GoalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalManager.swift; sourceTree = "<group>"; };
+		91346E5927C7D989007FFBA3 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		91346E5D27C7D989007FFBA3 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
+		91346E6027C7D989007FFBA3 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		91346E6327C7D989007FFBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91346E6F27C7E7B6007FFBA3 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
 		91E1733627BFBC5C00E03BD4 /* Moneybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 				91E1737527BFCD4200E03BD4 /* MainView.swift */,
 				91346E0127C542E1007FFBA3 /* AddGoalView.swift */,
 				91346E0827C55F9C007FFBA3 /* AddImageView.swift */,
+				91346E6F27C7E7B6007FFBA3 /* CongratsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,10 +143,22 @@
 		91346DFE27C540F6007FFBA3 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				91346E5727C7D989007FFBA3 /* TextFieldEffects */,
 				91E1738E27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift */,
 				91346E0627C55521007FFBA3 /* TextField.swift */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		91346E5727C7D989007FFBA3 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				91346E5927C7D989007FFBA3 /* TextFieldEffects.h */,
+				91346E5D27C7D989007FFBA3 /* TextFieldEffects.swift */,
+				91346E6027C7D989007FFBA3 /* KaedeTextField.swift */,
+				91346E6327C7D989007FFBA3 /* Info.plist */,
+			);
+			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
 		91E1732D27BFBC5C00E03BD4 = {
@@ -335,10 +356,13 @@
 				91E1738F27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift in Sources */,
 				91346E0227C542E1007FFBA3 /* AddGoalView.swift in Sources */,
 				91346E0027C5411D007FFBA3 /* AddGoalVC.swift in Sources */,
+				91346E6B27C7D989007FFBA3 /* KaedeTextField.swift in Sources */,
 				91E1738C27BFE02200E03BD4 /* GoalModel.swift in Sources */,
+				91346E7027C7E7B6007FFBA3 /* CongratsView.swift in Sources */,
 				91346E0B27C57182007FFBA3 /* GoalManager.swift in Sources */,
 				91346E0727C55521007FFBA3 /* TextField.swift in Sources */,
 				91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */,
+				91346E6827C7D989007FFBA3 /* TextFieldEffects.swift in Sources */,
 				91346E0927C55F9C007FFBA3 /* AddImageView.swift in Sources */,
 				91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */,
 			);
