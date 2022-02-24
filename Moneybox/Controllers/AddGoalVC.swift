@@ -126,7 +126,14 @@ extension AddGoalVC: UITextFieldDelegate {
     
     func checkTextfields() {
         if addGoalView.incomeInput.text != "" && addGoalView.savingsInput.text != "" && addGoalView.priceInput.text != "" && addGoalView.nameInput.text != "" {
-            nextButton.isEnabled = true
+            
+            if let savings = Int(addGoalView.savingsInput.text!), let price = Int(addGoalView.priceInput.text!), savings >= price {
+                addGoalView.errorLabel.text = "Накопления должны быть меньше стоимости цели"
+                nextButton.isEnabled = false
+            } else {
+                addGoalView.errorLabel.text = ""
+                nextButton.isEnabled = true
+            }
         } else {
             nextButton.isEnabled = false
         }
