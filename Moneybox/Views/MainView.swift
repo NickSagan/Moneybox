@@ -22,6 +22,7 @@ class MainView: UIView {
     let goalName: UILabel = {
         let label = UILabel()
         label.text = "Цель: конструктор Lego"
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textAlignment = .left
         label.frame.size.height = 40
@@ -34,6 +35,7 @@ class MainView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Осталось копить\nещё 10 недель \nдо 8 августа 2022"
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         label.frame.size.height = 100
@@ -45,13 +47,14 @@ class MainView: UIView {
         pv.progress = 0.6
         pv.color = UIColor.systemGreen
         pv.gradientColor = UIColor.white
-        pv.backgroundColor = UIColor.systemGray4
+        pv.backgroundColor = UIColor.systemGray
         return pv
     }()
 
     let moneyLeft: UILabel = {
         let label = UILabel()
         label.text = "Накопи еще 832 рублей"
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         label.frame.size.height = 30
@@ -62,6 +65,7 @@ class MainView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Накоплено 532 из 950 рублей"
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 17)
         label.textAlignment = .center
         label.frame.size.height = 30
@@ -71,16 +75,20 @@ class MainView: UIView {
     let plusButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setBackgroundImage(UIImage(systemName: "plus.circle"), for: .normal)
+        btn.tintColor = .white
         btn.frame.size.height = 50
         btn.frame.size.width = 50
+        btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     
     let minusButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setBackgroundImage(UIImage(systemName: "minus.circle"), for: .normal)
+        btn.tintColor = .white
         btn.frame.size.height = 50
         btn.frame.size.width = 50
+        btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     

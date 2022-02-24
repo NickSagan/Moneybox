@@ -24,6 +24,7 @@ class AddGoalVC: UIViewController {
         let btn = UIBarButtonItem()
         btn.style = .plain
         btn.title = "Далее"
+        btn.tintColor = .white
         btn.isEnabled = false
         btn.action = #selector(addGoal)
         return btn
@@ -31,6 +32,7 @@ class AddGoalVC: UIViewController {
     
     let finishButton: UIBarButtonItem = {
         let btn = UIBarButtonItem()
+        btn.tintColor = .white
         btn.style = .plain
         btn.title = "Завершить"
         btn.isEnabled = false
@@ -47,7 +49,7 @@ class AddGoalVC: UIViewController {
     @objc private func addGoalModel() {
         let goal = GoalModel(name: name, photo: currentImage, price: price, savings: savings, income: income)
         GoalManager.shared.setGoal(goal)
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc private func addImage() {
@@ -75,7 +77,6 @@ class AddGoalVC: UIViewController {
         // addGoalView => addImageView
         addGoalView.removeFromSuperview()
         addImageView = AddImageView()
-        addImageView.backgroundColor = .systemBackground
         addImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(addImageView)
         addImageView.snp.makeConstraints { make in
@@ -87,9 +88,8 @@ class AddGoalVC: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .systemBackground
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "addGoalBg")!)
         addGoalView = AddGoalView()
-        addGoalView.backgroundColor = .systemBackground
         view.addSubview(addGoalView)
         addGoalView.translatesAutoresizingMaskIntoConstraints = false
         addGoalView.snp.makeConstraints { make in

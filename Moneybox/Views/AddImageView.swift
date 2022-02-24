@@ -13,6 +13,7 @@ class AddImageView: UIView {
     let header: UILabel = {
         let label = UILabel()
         label.text = "Добавление фото:"
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 24)
         label.textAlignment = .left
         label.frame.size.height = 30
@@ -21,7 +22,7 @@ class AddImageView: UIView {
 
     let imageView: UIImageView = {
        let imgView = UIImageView()
-        imgView.backgroundColor = .systemBackground
+        imgView.backgroundColor = UIColor.black.withAlphaComponent(0)
         imgView.frame.size = CGSize(width: 300, height: 300)
         imgView.image = UIImage(named: "piggy")
         return imgView
@@ -30,17 +31,18 @@ class AddImageView: UIView {
     let button: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Добавить фото", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
         return btn
     }()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0)
         addSubviews()
         setupConstraints()
         setAppearance()

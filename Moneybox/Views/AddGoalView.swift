@@ -14,6 +14,7 @@ class AddGoalView: UIView {
         let label = UILabel()
         label.text = "Добавление цели:"
         label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = .white
         label.textAlignment = .left
         label.frame.size.height = 30
         return label
@@ -22,6 +23,8 @@ class AddGoalView: UIView {
     let nameInput: KaedeTextField = {
         let tf = KaedeTextField()
         tf.placeholder = "Название"
+        tf.textColor = .white
+        tf.placeholderColor = .white
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 40
@@ -35,6 +38,8 @@ class AddGoalView: UIView {
     let priceInput: KaedeTextField = {
         let tf = KaedeTextField()
         tf.placeholder = "Стоимость"
+        tf.textColor = .white
+        tf.placeholderColor = .white
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 40
@@ -49,6 +54,8 @@ class AddGoalView: UIView {
     let savingsInput: KaedeTextField = {
         let tf = KaedeTextField()
         tf.placeholder = "Уже накоплено"
+        tf.textColor = .white
+        tf.placeholderColor = .white
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 40
@@ -63,6 +70,8 @@ class AddGoalView: UIView {
     let incomeInput: KaedeTextField = {
         let tf = KaedeTextField()
         tf.placeholder = "Доход в неделю"
+        tf.textColor = .white
+        tf.placeholderColor = .white
         tf.font = UIFont.systemFont(ofSize: 17)
         tf.textAlignment = .left
         tf.frame.size.height = 40
@@ -88,12 +97,12 @@ class AddGoalView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white.withAlphaComponent(0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0)
         addSubviews()
         setupConstraints()
         setAppearance()
