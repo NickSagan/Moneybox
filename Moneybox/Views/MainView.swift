@@ -25,6 +25,8 @@ class MainView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textAlignment = .left
         label.frame.size.height = 40
+        label.numberOfLines = 3
+        label.lineBreakMode = .byClipping
         return label
     }()
     
