@@ -50,7 +50,10 @@ class MainVC: UIViewController {
             for _ in 1...repeatTimes {
                 goal.savings += counter
                 if goal.savings <= 0 { goal.savings = 0; break }
-                if goal.savings >= goal.price { goal.savings = goal.price; break }
+                if goal.savings >= goal.price {
+                    goal.savings = goal.price
+                    break
+                }
                 usleep(sleepTime)
                 DispatchQueue.main.async {
 //                    self.mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
@@ -62,6 +65,10 @@ class MainVC: UIViewController {
             }
             DispatchQueue.main.async {
                 self.goalManager.setGoal(goal)
+                if goal.savings == goal.price {
+                    let vc = CongratsVC()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
     }
@@ -125,9 +132,9 @@ class MainVC: UIViewController {
     
     func setAppearance() {
         if traitCollection.userInterfaceStyle == .dark {
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "darkbg")!)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBg")!)
         } else {
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBg")!)
         }
     }
 }
