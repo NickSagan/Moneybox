@@ -30,7 +30,10 @@ class MainVC: UIViewController {
         mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
         mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
         mainView.goalImage.image = goal.photo
-        mainView.progressBar.progress = ((CGFloat(goal.savings) * 100.0) / CGFloat(goal.price)) / 100.0
+        
+        var progress = CGFloat(((Float(goal.savings) * 100.0) / Float(goal.price)) / 100.0)
+        if progress < 0 { progress = 0 }
+        mainView.progressBar.progress = progress
     }
     
     func calculate(amount: Int) {
@@ -46,11 +49,15 @@ class MainVC: UIViewController {
         DispatchQueue.global().async {
             for _ in 1...repeatTimes {
                 goal.savings += counter
+                if goal.savings <= 0 { goal.savings = 0; break }
+                if goal.savings >= goal.price { goal.savings = goal.price; break }
                 usleep(sleepTime)
                 DispatchQueue.main.async {
 //                    self.mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
                     self.mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
-                    self.mainView.progressBar.progress = ((CGFloat(goal.savings) * 100.0) / CGFloat(goal.price)) / 100.0
+                    var progress = CGFloat(((Float(goal.savings) * 100.0) / Float(goal.price)) / 100.0)
+                    if progress < 0 { progress = 0 }
+                    self.mainView.progressBar.progress = progress
                 }
             }
             DispatchQueue.main.async {
