@@ -33,8 +33,11 @@ class GoalManager {
             let image = loadImageFromDiskWith(fileName: "goalImage") ?? UIImage(named: "piggy")!
             let name = defaults.string(forKey: "name") ?? "Добавьте цель"
             let price = defaults.integer(forKey: "price")
-            let savings = defaults.integer(forKey: "savings")
             let income = defaults.integer(forKey: "income")
+            
+            var savings = defaults.integer(forKey: "savings")
+            if savings < 0 { savings = 0 }
+            if savings > price { savings = price }
             
             let goal = GoalModel(name: name, photo: image, price: price, savings: savings, income: income)
             return goal
@@ -43,9 +46,14 @@ class GoalManager {
         set {
             saveImage(imageName: "goalImage", image: newValue.photo)
             defaults.setValue(newValue.name, forKey: "name")
-            defaults.setValue(newValue.price, forKey: "price")
-            defaults.setValue(newValue.savings, forKey: "savings")
             defaults.setValue(newValue.income, forKey: "income")
+            let price = newValue.price
+            defaults.setValue(price, forKey: "price")
+            
+            var savings = newValue.savings
+            if savings < 0 { savings = 0 }
+            if savings > price { savings = price }
+            defaults.setValue(savings, forKey: "savings")
         }
     }
     
