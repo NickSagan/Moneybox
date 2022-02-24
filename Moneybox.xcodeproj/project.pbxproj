@@ -16,6 +16,7 @@
 		91346E6827C7D989007FFBA3 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E5D27C7D989007FFBA3 /* TextFieldEffects.swift */; };
 		91346E6B27C7D989007FFBA3 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E6027C7D989007FFBA3 /* KaedeTextField.swift */; };
 		91346E7027C7E7B6007FFBA3 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E6F27C7E7B6007FFBA3 /* CongratsView.swift */; };
+		91346E7227C7EB53007FFBA3 /* CongratsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91346E7127C7EB53007FFBA3 /* CongratsVC.swift */; };
 		91E1733A27BFBC5C00E03BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */; };
 		91E1733C27BFBC5C00E03BD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */; };
 		91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E1733D27BFBC5C00E03BD4 /* MainVC.swift */; };
@@ -58,6 +59,7 @@
 		91346E6027C7D989007FFBA3 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
 		91346E6327C7D989007FFBA3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91346E6F27C7E7B6007FFBA3 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		91346E7127C7EB53007FFBA3 /* CongratsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsVC.swift; sourceTree = "<group>"; };
 		91E1733627BFBC5C00E03BD4 /* Moneybox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moneybox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E1733927BFBC5C00E03BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91E1733B27BFBC5C00E03BD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				91E1733D27BFBC5C00E03BD4 /* MainVC.swift */,
 				91346DFF27C5411D007FFBA3 /* AddGoalVC.swift */,
+				91346E7127C7EB53007FFBA3 /* CongratsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91346E7227C7EB53007FFBA3 /* CongratsVC.swift in Sources */,
 				91E1733E27BFBC5C00E03BD4 /* MainVC.swift in Sources */,
 				91E1737627BFCD4200E03BD4 /* MainView.swift in Sources */,
 				91E1738F27BFEA9400E03BD4 /* GradientHorizontalProgressBar.swift in Sources */,
