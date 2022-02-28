@@ -20,6 +20,7 @@ class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Moneybox"
         goalManager.delegate = self
         setupVC()
     }
