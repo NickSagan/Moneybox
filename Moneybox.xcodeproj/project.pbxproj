@@ -542,6 +542,8 @@
 				DEVELOPMENT_TEAM = M8KC244ECU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moneybox/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Моя копилка";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Чтобы сфотографировать цель необходим доступ к камере.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -571,6 +573,8 @@
 				DEVELOPMENT_TEAM = M8KC244ECU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moneybox/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Моя копилка";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Чтобы сфотографировать цель необходим доступ к камере.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
