@@ -32,7 +32,7 @@ class MainVC: UIViewController {
         mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
         mainView.goalImage.image = goal.photo
         
-        var progress = CGFloat(((Float(goal.savings) * 100.0) / Float(goal.price)) / 100.0)
+        var progress = CGFloat(((Float(goal.savings) * 100.0) / (Float(goal.price) + 0.01)) / 100.0)
         if progress < 0 { progress = 0 }
         mainView.progressBar.progress = progress
     }
@@ -59,7 +59,7 @@ class MainVC: UIViewController {
                 DispatchQueue.main.async {
 //                    self.mainView.progresslabel.text = "Накоплено \(goal.savings) из \(goal.price) рублей"
                     self.mainView.moneyLeft.text = "Накопи ещё \(goal.price - goal.savings) рублей"
-                    var progress = CGFloat(((Float(goal.savings) * 100.0) / Float(goal.price)) / 100.0)
+                    var progress = CGFloat(((Float(goal.savings) * 100.0) / (Float(goal.price) + 0.01)) / 100.0)
                     if progress < 0 { progress = 0 }
                     self.mainView.progressBar.progress = progress
                 }
@@ -81,7 +81,7 @@ class MainVC: UIViewController {
     
     @objc func shareGoal() {
         let goal = goalManager.getGoal()
-        let items: [Any] = ["Привет! Моя цель: \(goal.name). Всего надо накопить: \(goal.price), я уже накопил \(goal.savings), помоги мне накопить оставшуюсь сумму. Спасибо! Сообщение отправлено из мобильного приложения Копилка-MoneyBox для iPhone"]
+        let items: [Any] = ["Привет! Моя цель: \(goal.name). Всего надо накопить: \(goal.price), я уже накопил \(goal.savings), помоги мне накопить оставшуюсь сумму. Спасибо! Сообщение отправлено из мобильного приложения Моя копилка для iPhone"]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         ac.excludedActivityTypes = [.airDrop, .addToReadingList, .openInIBooks, .saveToCameraRoll]
         present(ac, animated: true)
