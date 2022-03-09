@@ -187,6 +187,11 @@ class MainView: UIView {
             make.right.equalTo(progressBar.snp.right).offset(-10)
             make.centerY.equalTo(progressBar.snp.centerY)
         }
+        
+        quiz.snp.makeConstraints { make in
+            make.top.equalTo(moneyLeft.snp.bottom).offset(20)
+            make.centerX.equalTo(goalName.snp.centerX)
+        }
     }
     
 //MARK: - APPEARANCE
