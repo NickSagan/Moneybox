@@ -92,6 +92,14 @@ class MainView: UIView {
         return btn
     }()
     
+    let quiz: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Умеете ли вы копить?", for: .normal)
+        btn.tintColor = .white
+        btn.setTitleColor(.white, for: .normal)
+        return btn
+    }()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = UIColor.white.withAlphaComponent(0)
@@ -116,6 +124,7 @@ class MainView: UIView {
         progressBar.addSubview(progresslabel)
         self.addSubview(plusButton)
         self.addSubview(minusButton)
+        self.addSubview(quiz)
         
         goalName.translatesAutoresizingMaskIntoConstraints = false
         goalImage.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +132,7 @@ class MainView: UIView {
         progressBar.translatesAutoresizingMaskIntoConstraints = false
         moneyLeft.translatesAutoresizingMaskIntoConstraints = false
         progresslabel.translatesAutoresizingMaskIntoConstraints = false
+        quiz.translatesAutoresizingMaskIntoConstraints = false
     }
     
 //MARK: - SETUP CONSTRAINTS
