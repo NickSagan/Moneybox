@@ -87,6 +87,10 @@ class MainVC: UIViewController {
         present(ac, animated: true)
     }
     
+    @objc func quizButton() {
+        
+    }
+    
     @objc func plusButton() {
         let ac = UIAlertController(title: "Добавить средства", message: nil, preferredStyle: .alert)
         ac.addTextField { textField in
@@ -126,6 +130,7 @@ class MainVC: UIViewController {
         }
         mainView.plusButton.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
         mainView.minusButton.addTarget(self, action: #selector(minusButton), for: .touchUpInside)
+        mainView.quiz.addTarget(self, action: #selector(quizButton), for: .touchUpInside)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareGoal))
