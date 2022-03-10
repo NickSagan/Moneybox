@@ -88,7 +88,8 @@ class MainVC: UIViewController {
     }
     
     @objc func quizButton() {
-        
+        let vc = QuizVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func plusButton() {
