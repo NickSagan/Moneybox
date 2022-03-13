@@ -36,8 +36,8 @@ class OnboardVC: UIViewController {
         let nc = UINavigationController(rootViewController: MainVC())
         nc.navigationBar.backgroundColor = UIColor.white.withAlphaComponent(0)
         nc.navigationBar.tintColor = .white
-        let vc = MainVC()
-        navigationController?.pushViewController(vc, animated: true)
+        nc.modalPresentationStyle = .overFullScreen
+        present(nc, animated: true, completion: nil)
     }
     
     @objc func handleContinue(sender: UIButton) {
@@ -53,8 +53,12 @@ class OnboardVC: UIViewController {
         let nc = UINavigationController(rootViewController: MainVC())
         nc.navigationBar.backgroundColor = UIColor.white.withAlphaComponent(0)
         nc.navigationBar.tintColor = .white
-        let vc = QuizVC()
-        navigationController?.pushViewController(vc, animated: true)
+        nc.modalPresentationStyle = .overFullScreen
+
+        present(nc, animated: true) {
+            let vc = QuizVC()
+            nc.pushViewController(vc, animated: true)
+        }
 
     }
 }
@@ -71,10 +75,10 @@ extension OnboardVC: SwiftyOnboardDataSource, SwiftyOnboardDelegate {
     func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
         let page = SwiftyOnboardPage()
         page.title.text = onboardTitleArray[index]
-        page.title.font = UIFont(name: "SFProDisplay-Bold", size: 34)
+        page.title.font = UIFont(name: "SFProDisplay-Bold", size: 28)
 
         page.subTitle.text = onboardSubTitleArray[index]
-        page.subTitle.font = UIFont(name: "SFProDisplay-Light", size: 22)
+        page.subTitle.font = UIFont(name: "SFProDisplay-Light", size: 20)
         
         if traitCollection.userInterfaceStyle == .dark {
             swiftyOnboard.style = .light
