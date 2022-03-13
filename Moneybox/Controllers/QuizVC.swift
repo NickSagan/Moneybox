@@ -63,8 +63,8 @@ class QuizVC: UIViewController {
     }
     
     func finishQuiz() {
-        let finalScore = quiz.score
-//        let vc = ResultVC()
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = FinishQuizVC()
+        vc.score = quiz.score
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
