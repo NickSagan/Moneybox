@@ -11,7 +11,7 @@ class QuizView: UIView {
     
     let question: UILabel = {
         let label = UILabel()
-        label.text = "Границы открыли и вы отправились отдыхать за рубеж. Какой валютой будете расплачиваться?"
+        label.text = ""
         label.textColor = .white
         label.layer.cornerRadius = 10.0
         label.font = UIFont.boldSystemFont(ofSize: 18)
@@ -24,25 +24,28 @@ class QuizView: UIView {
     
     let answer1: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Заранее обменяю деньги", for: .normal)
+        btn.setTitle("", for: .normal)
         btn.tintColor = .white
         btn.setTitleColor(.white, for: .normal)
+        btn.tag = 1
         return btn
     }()
     
     let answer2: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Сниму наличку банкомате", for: .normal)
+        btn.setTitle("", for: .normal)
         btn.tintColor = .white
         btn.setTitleColor(.white, for: .normal)
+        btn.tag = 2
         return btn
     }()
     
     let answer3: UIButton = {
         let btn = UIButton()
-        btn.setTitle("Главное — не картой", for: .normal)
+        btn.setTitle("", for: .normal)
         btn.tintColor = .white
         btn.setTitleColor(.white, for: .normal)
+        btn.tag = 3
         return btn
     }()
     
