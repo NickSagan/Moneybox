@@ -8,6 +8,7 @@
 import Foundation
 
 struct Quiz {
+    
     let questions: [Question] = [
     Question(question: "Вы решили накопить на достойную старость и ежемесячно откладывать с зарплаты несколько тысяч рублей на специальный счет. А знаете ли вы, в каком возрасте лучше начинать это делать?", answer1: "За 15 лет до пенсии", answer2: "В 30-35 лет", answer3: "в 22-25 лет", correctAnswer: 2),
     Question(question: "Границы открыли и вы отправились отдыхать за рубеж. Какой валютой будете расплачиваться?", answer1: "Заранее обменяю деньги", answer2: "Сниму наличку в банкомате", answer3: "Главное — не картой", correctAnswer: 1),
@@ -17,4 +18,25 @@ struct Quiz {
     Question(question: "Друг просит занять 20 тысяч «до зарплаты». Что ответите на это?", answer1: "Дам без лишних вопросов. Друг есть друг", answer2: "Дам, но попрошу вернуть на две тысячи больше", answer3: "Дам, но попрошу друга написать расписку", correctAnswer: 3),
     Question(question: "Cобираетесь совершить крупную покупку, но до нужной суммы не хватает 200 тыс. рублей. Решаете взять кредит. Как поступите?", answer1: "Выберу банк с оптимальными условиями, низким процентом и подам заявку", answer2: "Подам заявку сразу в несколько банков — один точно одобрит", answer3: "Возьму микрозаем — точно не откажут", correctAnswer: 1)
     ]
+    
+    var questionNum: Int = 0
+    var score: Int = 0
+    
+    mutating func check(answer: Int) -> Bool {
+        if questions[questionNum].correctAnswer == answer {
+            score += 1
+        }
+        
+        questionNum += 1
+        
+        if questionNum > questions.count - 1 {
+            questionNum = questions.count - 1
+        }
+
+        if questionNum == questions.count - 1 {
+            return true
+        } else {
+            return false
+        }
+    }
 }
