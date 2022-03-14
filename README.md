@@ -10,6 +10,7 @@ Piggy bank app. Allows you to set a goal and monitor the progress of accumulatin
 ![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/1.png)
 ![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/2.png)
 ![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/3.png)
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/4.png)
 
 # How to use the app
 
@@ -19,6 +20,8 @@ Piggy bank app. Allows you to set a goal and monitor the progress of accumulatin
 * Свайпайте влево, чтобы пройти онбординг
 * Задайте вашу цель накопления: укажите название, необходимую сумму, сумму которая уже накоплена и еженедельных доход, добавьте фотографию цели. Далее, вы можете пополнять или уменьшать баланс, отслеживать прогресс накопления. В правом верхнем углу есть кнопка: поделиться с друзьями. В левом верхнем углу: кнопка создания новой цели. Также, вы можете пройти небольшой квиз, чтобы понять насколько вы подкованы в вопросах накопления и преумножения капитала.
 
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/5.png)
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/6.png)
 
 # Message me
 [![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/64px-Telegram_logo.svg.png)](https://t.me/NickSagan)
