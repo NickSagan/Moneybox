@@ -2,6 +2,9 @@
 Piggy bank app. Allows you to set a goal and monitor the progress of accumulating money. Can be shared with friends.
 Приложение копилка. Позволяет задать цель и следить за прогрессом накопления денег. Можно поделиться с друзьями.
 
+# Download in AppStore
+[![](https://upload.wikimedia.org/wikipedia/commons/e/e8/Apple_App_Store_icon.jpg)](https://apps.apple.com/ru/app/%D0%BC%D0%BE%D1%8F-%D0%BA%D0%BE%D0%BF%D0%B8%D0%BB%D0%BA%D0%B0-%D1%81%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9/id1612973997?l=en)
+
 # This project contains
 
 * UIKit, SwiftyOnboard, Snapkit, IQKeyboardManager, GCD, MVC
