@@ -7,6 +7,10 @@ Piggy bank app. Allows you to set a goal and monitor the progress of accumulatin
 * UIKit, SwiftyOnboard, Snapkit, IQKeyboardManager, GCD, MVC
 * TextFieldEffects, GradientHorizontalProgressBar
 
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/1.png)
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/2.png)
+![Moneybox](https://github.com/NickSagan/Moneybox/blob/2a03455098ceeb53cad9e653c7de380f1ba9872b/3.png)
+
 # How to use the app
 
 * Swipe left to go through onboarding screen
